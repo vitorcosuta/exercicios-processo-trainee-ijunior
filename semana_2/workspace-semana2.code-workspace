@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../CC UFMG/2022.2/PDS I/Lista09_TAD_Registros"
+		},
+		{
+			"path": "../../CC UFMG/2022.2/PDS I/Provas antigas/prova3/prova_subs_1_RESOLUCAO"
+		}
+	],
+	"settings": {
+		"C_Cpp.errorSquiggles": "Disabled",
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}
