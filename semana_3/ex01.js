@@ -47,6 +47,39 @@ function ehPrimo(num){
     return true;
 }
 
+function contarVogais(str){
+
+    let cont_A = 0, cont_E = 0, cont_I = 0, cont_O = 0, cont_U = 0;
+
+    for (let letra of str.toLowerCase()){
+        if (letra == 'a'){
+            cont_A++;
+        }
+        if (letra == 'e'){
+            cont_E++;
+        }
+        if (letra == 'i'){
+            cont_I++;
+        }
+        if (letra == 'o'){
+            cont_O++;
+        }
+        if (letra == 'u'){
+            cont_U++;
+        }
+    }
+
+    const vogais = {
+        a: cont_A,
+        e: cont_E,
+        i: cont_I,
+        o: cont_O,
+        u: cont_U
+    }
+
+    return vogais;
+}
+
 
 //Teste da funcao ehPalindromo
 let string_1 = 'Kayak';
@@ -68,3 +101,11 @@ console.log(string_2 + `] sao ${dois_maiores[0]} e ${dois_maiores[1]}.`);
 // Teste da funcao ehPrimo
 let num_1 = 7;
 ehPrimo(num_1) ? console.log(`O numero ${num_1} eh primo.`) : console.log(`O numero ${num_1} nao eh primo.`);
+
+
+// Teste da funcao contarVogais
+let string_3 = 'sequoia';
+let ocorrencia_vogais = contarVogais(string_3);
+console.log(`Ocorrencia das vogais na palavra '${string_3}':`);
+
+console.log(ocorrencia_vogais);
