@@ -13,7 +13,37 @@ function ehPalindromo(str){
     return true;
 }
 
+function encontrarDoisMaiores(lista_numeros){
+    lista_numeros.sort();
+    let dois_maiores = [], tamanho = lista_numeros.length;
+    let maior_numero_1 = lista_numeros[tamanho-1];
+    dois_maiores.push(maior_numero_1);
 
-//Teste da funcao 
-let string1 = 'Kayak';
-ehPalindromo(string1) ? console.log(`A string '${string1}' eh palindromo.`) : console.log(`A string '${string1}' nao eh palindromo.`);
+    let maior_numero_2 = lista_numeros[tamanho-2];
+    let iterador = tamanho-3;
+    
+    // Precisamos de um while para descartar valores repetidos
+    while(maior_numero_1 == maior_numero_2 && iterador >= 0){
+        maior_numero_2 = lista_numeros[iterador];
+        iterador--;
+    }
+
+    dois_maiores.push(maior_numero_2);
+    return dois_maiores;
+}
+
+
+//Teste da funcao ehPalindromo
+let string_1 = 'Kayak';
+ehPalindromo(string_1) ? console.log(`A string '${string_1}' eh palindromo.`) : console.log(`A string '${string_1}' nao eh palindromo.`);
+
+// Teste da funcao encontrarDoisMaiores
+let lista_1 = [2, 6, 1, 1, 9, 9];
+let string_2 = 'Os maiores numeros da lista [';
+
+for (let num of lista_1){
+    string_2 += ` ${num} `;
+}
+
+let dois_maiores = encontrarDoisMaiores(lista_1);
+console.log(string_2 + `] sao ${dois_maiores[0]} e ${dois_maiores[1]}.`);
