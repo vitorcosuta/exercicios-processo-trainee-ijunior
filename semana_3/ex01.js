@@ -32,10 +32,26 @@ function encontrarDoisMaiores(lista_numeros){
     return dois_maiores;
 }
 
+function ehPrimo(num){
+
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < Math.sqrt(num); i++){
+        if (num % i == 0){
+            return false;
+        }
+    }
+
+    return true;
+}
+
 
 //Teste da funcao ehPalindromo
 let string_1 = 'Kayak';
 ehPalindromo(string_1) ? console.log(`A string '${string_1}' eh palindromo.`) : console.log(`A string '${string_1}' nao eh palindromo.`);
+
 
 // Teste da funcao encontrarDoisMaiores
 let lista_1 = [2, 6, 1, 1, 9, 9];
@@ -47,3 +63,8 @@ for (let num of lista_1){
 
 let dois_maiores = encontrarDoisMaiores(lista_1);
 console.log(string_2 + `] sao ${dois_maiores[0]} e ${dois_maiores[1]}.`);
+
+
+// Teste da funcao ehPrimo
+let num_1 = 7;
+ehPrimo(num_1) ? console.log(`O numero ${num_1} eh primo.`) : console.log(`O numero ${num_1} nao eh primo.`);
